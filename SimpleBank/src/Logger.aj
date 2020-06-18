@@ -10,10 +10,10 @@ public aspect Logger{
 	after() returning(int opcion): execution(int menu()){
 		try(BufferedWriter bw= new BufferedWriter(new FileWriter("src/com/bank/Log.txt",true))){
 			if(opcion==2) {
-				bw.write("Deposito -" + LocalTime.now() + "\n");
+				bw.write("Deposito - " + LocalTime.now() + "\n");
 			}
 			else if(opcion==3) {
-				bw.write("Retiro -"+ LocalTime.now() + "\n");
+				bw.write("Retiro - "+ LocalTime.now() + "\n");
 			}
 		} catch(IOException ex) {
 			System.out.println(ex.getMessage());
